@@ -1,0 +1,299 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Trendy Vocational Training Centre{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-4">Trendy Vocational Training Centre</h1>
+                    <p class="lead mb-4 opacity-75">Transform your future with practical skills and industry-ready training</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="https://portal.trendyvocationaltrainingcentre.com/admissions/apply" 
+                           class="btn btn-accent-custom btn-lg rounded-pill px-4" target="_blank">
+                            Start Your Journey
+                        </a>
+                        <a href="#programs" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                            Explore Programs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div id="imageCarousel" class="carousel slide carousel-custom" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/trendy-building-and-construction.jpeg' %}" class="d-block w-100" alt="Building and Construction">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/trendy-team.jpeg' %}" class="d-block w-100" alt="Trendy Team">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/trendy-catering.jpeg' %}" class="d-block w-100" alt="Catering">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/trendy-training-team.jpeg' %}" class="d-block w-100" alt="Training Team">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/grad-pic.jpeg' %}" class="d-block w-100" alt="Trainers">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section-padding">
+        <div class="container">
+            <h2 class="display-4 fw-bold text-center text-dark-custom mb-5">Our Programs</h2>
+            <div class="row g-4">
+                <!-- ICT Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/students-learning.jpeg' %}" class="card-img-top" alt="ICT Training" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-laptop text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Information Communication Technology</h5>
+                            <p class="card-text text-muted">A comprehensive ICT certificate program offering essential skills in information and communication technology</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Packages Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/packages.jpeg' %}" class="card-img-top" alt="Computer Packages" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-desktop text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Computer Packages</h5>
+                            <p class="card-text text-muted">A foundational artisan-level course focused on mastering computer packages and software.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Building & Construction Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/trendy-building-and-construction.jpeg' %}" class="card-img-top" alt="Building and Construction" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-hard-hat text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Building & Construction</h5>
+                            <p class="card-text text-muted">Comprehensive training in construction techniques, site management, and building technologies for aspiring construction professionals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catering Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/trendy-catering.jpeg' %}" class="card-img-top" alt="Catering" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-utensils text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Catering</h5>
+                            <p class="card-text text-muted">Learn culinary arts, food safety, menu planning, and kitchen management for a successful career in the hospitality industry.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beauty Therapy Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/trendy-training-team.jpeg' %}" class="card-img-top" alt="Beauty Therapy" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-spa text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Beauty Therapy</h5>
+                            <p class="card-text text-muted">A specialized certificate in beauty therapy, providing hands-on skills for the beauty industry.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computerized Accounting Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/quickbooks.avif' %}" class="card-img-top" alt="Computerized Accounting" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-calculator text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Computerized Accounting</h5>
+                            <p class="card-text text-muted">A certificate in computerized accounting that equips students with knowledge of modern accounting systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Excel Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/excel.avif' %}" class="card-img-top" alt="Advanced Excel" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-table text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Advanced Excel</h5>
+                            <p class="card-text text-muted">An advanced Excel course, designed to deepen students' expertise in spreadsheet functions and data analysis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Archicad Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/Archicad-logo-1.png' %}" class="card-img-top" alt="Archicad" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-drafting-compass text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Archicad</h5>
+                            <p class="card-text text-muted">Focuses on architectural design and CAD tools for planning and drafting</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Design Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/html-css.png' %}" class="card-img-top" alt="Web Design" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-code text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Web Design</h5>
+                            <p class="card-text text-muted">A certificate program in web design, focusing on the creation and design of professional websites</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic Design Card -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow card-hover">
+                        <img src="{% static 'images/trendy-team.jpeg' %}" class="card-img-top" alt="Graphic Design" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-paint-brush text-white fs-4"></i>
+                            </div>
+                            <h5 class="card-title text-dark-custom">Graphic Design</h5>
+                            <p class="card-text text-muted">A certificate in graphic design, teaching creative design techniques for visual communication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-dark-custom text-white section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-users text-accent-custom mb-3" style="font-size: 3rem;"></i>
+                    <h5 class="mb-3">Student-Focused</h5>
+                    <p>Empowering Every Learner's Potential with personalized guidance and hands-on experiences.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-certificate text-accent-custom mb-3" style="font-size: 3rem;"></i>
+                    <h5 class="mb-3">Ministry of Education Approved</h5>
+                    <p>Certified Excellence, Trusted Standards ensuring recognized qualifications.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-hand-holding-usd text-accent-custom mb-3" style="font-size: 3rem;"></i>
+                    <h5 class="mb-3">Affordable</h5>
+                    <p>Quality Education Within Your Reach without compromising on excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center text-dark-custom mb-4">Experience Trendy Vocational</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/bUe-3jXQuzM" 
+                                title="Trendy Vocational Training Centre" 
+                                allowfullscreen
+                                class="rounded shadow">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="section-padding bg-white rounded-custom">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center text-dark-custom mb-5">Why Choose Us</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div class="feature-number me-3">1</div>
+                        <div>
+                            <h5 class="mb-2">Practical, Industry-Relevant Skills</h5>
+                            <p class="text-muted">Our hands-on vocational training equips you with the technical skills and expertise needed to thrive in today's competitive job market.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div class="feature-number me-3">2</div>
+                        <div>
+                            <h5 class="mb-2">Diverse, Tailored Programs</h5>
+                            <p class="text-muted">Whether you're passionate about technology, design, accounting, or beauty therapy, we offer a wide range of certificate courses to suit your interests.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div class="feature-number me-3">3</div>
+                        <div>
+                            <h5 class="mb-2">Affordable, Accessible Learning</h5>
+                            <p class="text-muted">We believe in providing quality education at a cost that makes it accessible to everyone, ensuring that you can pursue your dreams.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div class="feature-number me-3">4</div>
+                        <div>
+                            <h5 class="mb-2">Experienced Instructors & Modern Facilities</h5>
+                            <p class="text-muted">Learn from qualified instructors with real-world experience, using state-of-the-art facilities and up-to-date resources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

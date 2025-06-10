@@ -1,0 +1,15 @@
+env/
+.vscode/
+*.sqlite3
+__pycache__/
+*.pyc
+.env
+
+staticfiles/*
+
+# Ignore all migrations except __init__.py
+apps/*/migrations/*
+!apps/*/migrations/__init__.py
+
+files/
+media/
