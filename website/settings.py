@@ -153,4 +153,7 @@ RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY', default='')
 # API settings
 RECRUITMENT_API_BASE_URL = config('RECRUITMENT_API_BASE_URL', default='https://hrm.trendyvocationaltrainingcentre.com/api/recruitment/')
 
+FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880  # 5MB
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880  # 5MB
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

@@ -8,7 +8,6 @@
 {% endblock %}
 
 {% block content %}
-    <!-- Job Header -->
     <section class="bg-primary-custom text-white section-padding" style="margin-top: 76px;">
         <div class="container">
             <div class="row">
@@ -23,10 +22,10 @@
                     </div>
                     <div class="d-flex flex-wrap gap-4 text-light">
                         <div>
-                            <i class="fas fa-building me-2"></i>{{ job_posting.department|default:"General Department" }}
+                            <i class="fas fa-building me-2"></i>{{ job_posting.department.name|default:"General Department" }}
                         </div>
                         <div>
-                            <i class="fas fa-map-marker-alt me-2"></i>{{ job_posting.location|default:"Naivasha, Kenya" }}
+                            <i class="fas fa-map-marker-alt me-2"></i>{{ job_posting.location.name|default:"Naivasha, Kenya" }}
                         </div>
                         {% if job_posting.salary_min and job_posting.salary_max %}
                             <div>
@@ -46,7 +45,6 @@
         </div>
     </section>
 
-    <!-- Job Details and Application -->
     <section class="section-padding">
         <div class="container">
             <div class="row g-5">
@@ -76,18 +74,17 @@
                     </div>
                 </div>
 
-                <!-- Application Form -->
                 <div class="col-lg-4">
                     <div class="card border-0 shadow sticky-top" style="top: 100px;">
                         <div class="card-header bg-primary-custom text-white">
                             <h5 class="mb-0">Apply for this Position</h5>
                         </div>
                         <div class="card-body">
-                            {% if job_posting.is_active %}
+                            {% if is_active %}
                                 <form method="post" enctype="multipart/form-data">
                                     {% csrf_token %}
-                                    
-                                    <!-- Personal Information -->
+
+                                    <h6 class="mb-3">Personal Information</h6>
                                     <div class="mb-3">
                                         <label for="{{ form.first_name.id_for_label }}" class="form-label">First Name *</label>
                                         {{ form.first_name }}
@@ -95,7 +92,6 @@
                                             <div class="text-danger small">{{ form.first_name.errors.0 }}</div>
                                         {% endif %}
                                     </div>
-
                                     <div class="mb-3">
                                         <label for="{{ form.last_name.id_for_label }}" class="form-label">Last Name *</label>
                                         {{ form.last_name }}
@@ -103,7 +99,6 @@
                                             <div class="text-danger small">{{ form.last_name.errors.0 }}</div>
                                         {% endif %}
                                     </div>
-
                                     <div class="mb-3">
                                         <label for="{{ form.email.id_for_label }}" class="form-label">Email *</label>
                                         {{ form.email }}
@@ -111,7 +106,6 @@
                                             <div class="text-danger small">{{ form.email.errors.0 }}</div>
                                         {% endif %}
                                     </div>
-
                                     <div class="mb-3">
                                         <label for="{{ form.phone.id_for_label }}" class="form-label">Phone *</label>
                                         {{ form.phone }}
@@ -119,60 +113,70 @@
                                             <div class="text-danger small">{{ form.phone.errors.0 }}</div>
                                         {% endif %}
                                     </div>
-
                                     <div class="mb-3">
-                                        <label for="{{ form.address.id_for_label }}" class="form-label">Address</label>
+                                        <label for="{{ form.address.id_for_label }}" class="form-label">Address (Optional)</label>
                                         {{ form.address }}
                                         {% if form.address.errors %}
                                             <div class="text-danger small">{{ form.address.errors.0 }}</div>
                                         {% endif %}
                                     </div>
-
-                                    <!-- Documents -->
                                     <div class="mb-3">
-                                        <label for="{{ form.resume.id_for_label }}" class="form-label">Resume/CV *</label>
-                                        {{ form.resume }}
-                                        <div class="form-text">PDF, DOC, or DOCX format</div>
-                                        {% if form.resume.errors %}
-                                            <div class="text-danger small">{{ form.resume.errors.0 }}</div>
-                                        {% endif %}
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="{{ form.cover_letter.id_for_label }}" class="form-label">Cover Letter</label>
-                                        {{ form.cover_letter }}
-                                        <div class="form-text">PDF, DOC, or DOCX format</div>
-                                        {% if form.cover_letter.errors %}
-                                            <div class="text-danger small">{{ form.cover_letter.errors.0 }}</div>
-                                        {% endif %}
-                                    </div>
-
-                                    <!-- Additional Information -->
-                                    <div class="mb-3">
-                                        <label for="{{ form.linkedin_profile.id_for_label }}" class="form-label">LinkedIn Profile</label>
+                                        <label for="{{ form.linkedin_profile.id_for_label }}" class="form-label">LinkedIn Profile (Optional)</label>
                                         {{ form.linkedin_profile }}
                                         {% if form.linkedin_profile.errors %}
                                             <div class="text-danger small">{{ form.linkedin_profile.errors.0 }}</div>
                                         {% endif %}
                                     </div>
-
                                     <div class="mb-3">
-                                        <label for="{{ form.portfolio_url.id_for_label }}" class="form-label">Portfolio URL</label>
+                                        <label for="{{ form.portfolio_url.id_for_label }}" class="form-label">Portfolio URL (Optional)</label>
                                         {{ form.portfolio_url }}
                                         {% if form.portfolio_url.errors %}
                                             <div class="text-danger small">{{ form.portfolio_url.errors.0 }}</div>
                                         {% endif %}
                                     </div>
 
+                                    <h6 class="mt-4 mb-3">Documents</h6>
                                     <div class="mb-3">
-                                        <label for="{{ form.cover_note.id_for_label }}" class="form-label">Cover Note</label>
+                                        <label for="{{ form.resume.id_for_label }}" class="form-label">Resume (PDF, DOC, DOCX)</label>
+                                        {{ form.resume }}
+                                        {% if form.resume.errors %}
+                                            <div class="text-danger small">{{ form.resume.errors.0 }}</div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="{{ form.cover_letter.id_for_label }}" class="form-label">Cover Letter (PDF, DOC, DOCX)</label>
+                                        {{ form.cover_letter }}
+                                        {% if form.cover_letter.errors %}
+                                            <div class="text-danger small">{{ form.cover_letter.errors.0 }}</div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="{{ form.additional_document1.id_for_label }}" class="form-label">Additional Document 1 (Optional)</label>
+                                        {{ form.additional_document1 }}
+                                        {% if form.additional_document1.errors %}
+                                            <div class="text-danger small">{{ form.additional_document1.errors.0 }}</div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="{{ form.additional_document2.id_for_label }}" class="form-label">Additional Document 2 (Optional)</label>
+                                        {{ form.additional_document2 }}
+                                        {% if form.additional_document2.errors %}
+                                            <div class="text-danger small">{{ form.additional_document2.errors.0 }}</div>
+                                        {% endif %}
+                                    </div>
+
+                                    <h6 class="mt-4 mb-3">Cover Note (Optional)</h6>
+                                    <div class="mb-3">
+                                        <label for="{{ form.cover_note.id_for_label }}" class="form-label">Tell us more about your application</label>
                                         {{ form.cover_note }}
                                         {% if form.cover_note.errors %}
                                             <div class="text-danger small">{{ form.cover_note.errors.0 }}</div>
                                         {% endif %}
                                     </div>
 
-                                    <!-- reCAPTCHA -->
+                                    <!-- Hidden source field -->
+                                    {{ form.source }}
+
                                     <div class="mb-3">
                                         {{ form.captcha }}
                                         {% if form.captcha.errors %}

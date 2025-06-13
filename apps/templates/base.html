@@ -199,9 +199,6 @@
                         <a class="nav-link" href="{% url 'main:home' %}#programs">Programs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'careers:careers_list' %}">Careers</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'main:home' %}#why-us">Why Choose Us</a>
                     </li>
                     <li class="nav-item">
@@ -209,6 +206,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://portal.trendyvocationaltrainingcentre.com/" target="_blank">Staff Portal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-accent-custom rounded-pill px-4" href="{% url 'careers:careers_list' %}">Jobs</a>
                     </li>
                     <li class="nav-item ms-2">
                         <a class="btn btn-accent-custom rounded-pill px-4" href="https://portal.trendyvocationaltrainingcentre.com/admissions/apply" target="_blank">
@@ -222,9 +222,9 @@
 
     <!-- Messages -->
     {% if messages %}
-        <div class="container mt-5 pt-5">
+        <div class="container pt-5">
             {% for message in messages %}
-                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <div class="alert alert-{{ message.tags }} mt-5 alert-dismissible fade show" role="alert">
                     {{ message }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
@@ -306,13 +306,13 @@
 
             <!-- Bottom Bar -->
             <hr class="border-secondary">
-            <div class="row align-items-center">
+            <div class="row align-items-center text-white">
                 <div class="col-md-6">
-                    <p class="mb-0 text-muted">© 2025 Trendy Vocational Training Centre. All rights reserved.</p>
+                    <p class="mb-0 text-white opacity-75">© 2025 Trendy Vocational Training Centre. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-muted me-3">Privacy Policy</a>
-                    <a href="#" class="text-muted">Terms of Service</a>
+                    <a href="#" class="text-white opacity-75 me-3">Privacy Policy</a>
+                    <a href="#" class="text-white opacity-75">Terms of Service</a>
                 </div>
             </div>
         </div>
