@@ -1,9 +1,7 @@
-"use client"
-
 import type React from "react"
 
 import { useState } from "react"
-import { Head, Link, router } from "@inertiajs/react"
+import { Head, Link } from "@inertiajs/react"
 
 export const metadata = {
   title: "Apply for Admission | Trendy Vocational Training Centre",

@@ -10,8 +10,6 @@ import VideoSection from '@/components/home/VideoSection';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import HomeLayout from '@/layouts/home-layout';
 
-import { Head, Link, usePage } from '@inertiajs/react';
-
 export default function Welcome() {
 
 

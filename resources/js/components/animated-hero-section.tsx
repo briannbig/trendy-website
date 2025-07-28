@@ -137,40 +137,4 @@ const AnimatedHero: React.FC<AnimatedHeroProps> = ({
   )
 }
 
-// Usage Examples
-const ExampleUsage: React.FC = () => {
-  return (
-    <div>
-      {/* Academic Programs Page */}
-      <AnimatedHero
-        title="Academic Programs"
-        subtitle="Discover our comprehensive range of vocational programs designed to equip you with practical, industry-relevant skills for today's job market."
-      />
-      
-      {/* Home Page */}
-      <AnimatedHero
-        title="Welcome to Trendy Vocational"
-        subtitle="Empowering students with practical skills and knowledge for successful careers in today's competitive job market."
-        buttons={[
-          { text: "Apply Now", href: "/apply" },
-          { text: "Learn More", href: "/about", variant: "secondary" }
-        ]}
-      />
-      
-      {/* Admissions Page */}
-      <AnimatedHero
-        title="Join Our Community"
-        subtitle="Start your journey towards a successful career with our industry-focused programs."
-        buttons={[
-          { text: "Apply Today", href: "/apply", external: true },
-          { text: "Schedule Tour", href: "/tour", variant: "secondary" }
-        ]}
-        gradientFrom="blue-500"
-        gradientVia="blue-600"
-        gradientTo="blue-700"
-      />
-    </div>
-  )
-}
-
 export default AnimatedHero
